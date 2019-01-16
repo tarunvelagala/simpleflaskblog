@@ -1,0 +1,51 @@
+{% extends 'account_base.html' %}
+{% block content %}
+    <div class="login-clean">
+        <form method="POST" action="" class="login_form1" style="border-radius: 25px;" enctype="multipart/form-data">
+            <div>
+                {{ form.hidden_tag() }}
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="illustration">
+                <h3 class="text text-center text-primary">Reset Password</h3>
+                <i class="icon ion-log-in" style="color:#1E90FF;"></i></div>
+            <div class="form-group">
+                {% if form.password.errors %}
+                    {{ form.password(class="form-control is-invalid", placeholder="Password") }}
+                    {% for error in form.password.errors %}
+                        <div class="invalid-feedback">
+                        <span>{{ error }}</span>
+                    {% endfor %}
+
+                </div>
+                {% else %}
+                    {{ form.password(class="form-control", placeholder="Password") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {% if form.confirm_password.errors %}
+                    {{ form.confirm_password(class="form-control is-invalid", placeholder="Confirm Password") }}
+                    {% for error in form.confirm_password.errors %}
+                        <div class="invalid-feedback">
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    {{ form.confirm_password(class="form-control", placeholder="Confirm Password") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary btn-block") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

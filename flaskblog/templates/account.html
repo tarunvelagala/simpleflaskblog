@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css">
+    <!--div class="content-section"-->
+    <div class="media">
+        <img src="{{ url_for('static', filename='user-1_256.png') }}" class="rounded-circle account-img"
+             style="width: 80px;height: 80px">
+        <div class="media-body">
+            <h2 class="account-heading">{{ current_user.username }}</h2>
+            <p class="text-secondary">{{ current_user.email }}</p>
+        </div>
+    </div>
+
+    <div class="login-clean" style="margin-top: -60px; ">
+        <form method="POST" class="acc_form" style="height:600px;width:500px;border-radius: 25px;" action="">
+            {{ form.hidden_tag() }}
+            <div class="illustration" style="">
+                <h3 class="text text-center text-dark">Update Account</h3>
+                <i class="fal fa-user-edit" style="font-size: 70px;margin-top: 10px;"></i>
+            </div>
+            <div class="form-group">
+                {% if form.username.errors %}
+                    {{ form.username(class="form-control is-invalid", placeholder="Username") }}
+                    {% for error in form.username.errors %}
+                        <div class="invalid-feedback">
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    {{ form.username(class="form-control", placeholder="Username") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control is-invalid",placeholder="Email") }}
+                    {% for error in form.email.errors %}
+                        <div class="invalid-feedback">
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    {{ form.email(class="form-control", placeholder="Email") }}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <!--button class="btn btn-primary btn-block" type="submit">Sign Up</button-->
+                {{ form.submit(class="btn btn-primary btn-block") }}
+
+            </div>
+
+        </form>
+
+
+    </div>
+    <!--/div-->
+{% endblock content %}
+
+

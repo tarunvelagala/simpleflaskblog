@@ -1,0 +1,135 @@
+.content-section {
+    background: #f1f7fc;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.content-section:hover {
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    transition: 0.4s;
+}
+
+.first-lst {
+    border-radius: 15px 15px 0 0;
+}
+
+.third-lst {
+    border-radius: 0 0 15px 15px;
+}
+
+.article-title {
+    color: #444444;
+}
+
+a.article-title:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.article-content {
+    white-space: pre-line;
+}
+
+.article-img {
+    height: 55px;
+    width: 55px;
+    margin-right: 16px;
+}
+
+.article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
+.account-heading {
+    font-size: 2.5rem;
+}
+
+.list-group-item:first-child {
+    border-radius: 15px 15px 0 0;
+}
+
+.list-group-item:last-child {
+    border-radius: 0 0 15px 15px;
+
+}
+
+.alert {
+    border-radius: 25px;
+}
+
+.form-check {
+    position: relative;
+    display: block;
+    padding-left: 1.25rem;
+}
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.form-check-label {
+    margin-bottom: 0;
+}
+
+.acc_form {
+    border-radius: 25px;
+}
+
+.acc_form:hover {
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    transition: 0.4s;
+}
+
+.login_form1 {
+    border-radius: 25px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    transition: 0.4s;
+}
+
+.reg_form1 {
+    width: 400px;
+    height: 600px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    transition: 0.4s;
+}
+
+form textarea#content {
+    height: 100px;
+}

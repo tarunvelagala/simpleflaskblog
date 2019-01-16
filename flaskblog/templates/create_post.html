@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="login-clean" style="margin-top: -30px;">
+        <form method="POST" class="acc_form" style="height:600px;max-width:600px;border-radius: 25px;" action="">
+            {{ form.hidden_tag() }}
+            <div class="illustration" style="">
+                <h3 class="text text-center text-primary">{{ heading_action }}</h3>
+                <i class="fa fa-edit" style="font-size: 70px;margin-top: 10px;"></i>
+            </div>
+            <div class="form-group">
+                {% if form.title.errors %}
+                    {{ form.title(class="form-control is-invalid", placeholder="Title name") }}
+                    {% for error in form.title.errors %}
+                        <div class="invalid-feedback">
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    {{ form.title(class="form-control", placeholder="Title name") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {% if form.content.errors %}
+                    {{ form.content(class="form-control is-invalid post_content",placeholder="Content", rows=10, cols=10) }}
+                    {% for error in form.content.errors %}
+                        <div class="invalid-feedback">
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    {{ form.content(class="form-control post_content", placeholder="Content", rows='10', cols='10') }}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <!--button class="btn btn-primary btn-block" type="submit">Sign Up</button-->
+                {{ form.submit(class="btn btn-primary btn-block") }}
+
+            </div>
+
+        </form>
+
+
+    </div>
+    {% endblock content %}

@@ -1,0 +1,64 @@
+{% extends 'account_base.html' %}
+{% block content %}
+    <div class="login-clean">
+        <form method="POST" action="" class="login_form1" style="border-radius: 25px;" enctype="multipart/form-data">
+            <div>
+                {{ form.hidden_tag() }}
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="illustration">
+                <h3 class="text text-center text-primary">Login</h3>
+                <i class="icon ion-log-in" style="color:#1E90FF;"></i></div>
+            <div class="form-group">
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control is-invalid",placeholder="Email") }}
+                    {% for error in form.email.errors %}
+                        <div class="invalid-feedback">
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    {{ form.email(class="form-control", placeholder="Email") }}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {% if form.password.errors %}
+                    {{ form.password(class="form-control is-invalid", placeholder="Password") }}
+                    {% for error in form.password.errors %}
+                        <div class="invalid-feedback">
+                        <span>{{ error }}</span>
+                    {% endfor %}
+
+                </div>
+                {% else %}
+                    {{ form.password(class="form-control", placeholder="Password") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label") }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary btn-block") }}
+            </div>
+            <span style="font-size:14px;text-align:center">Don't have an account ?&nbsp;<a
+                    href="{{ url_for('users.register') }}"
+                    style="text-align:center">Sign Up</a></span>
+        <br>
+        <span style="font-size:14px;text-align:center"><a
+                    href="{{ url_for('users.reset_request') }}"
+                    style="text-align:center">Forgot your password?&nbsp;</a></span>
+        </form>
+    </div>
+{% endblock %}
